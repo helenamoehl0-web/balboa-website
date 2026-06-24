@@ -210,9 +210,22 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    .blend-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+      position: relative;
+      z-index: 1;
+      transition: transform .4s ease;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,.5));
+    }
+    .blend-card:hover .blend-img { transform: translateY(-6px) scale(1.04); }
+
     .blend-card {
       position: relative;
-      padding: 36px 24px 32px;
+      padding: 28px 24px 32px;
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -704,6 +717,7 @@
     <div class="blends-grid">
 
       <div class="blend-card">
+        <img class="blend-img" src="./balboa further pictures/ChatGPT Image Jun 24, 2026 at 04_27_21 PM 4.jpeg" alt="Dill Ranch jar" />
         <span class="blend-number">01</span>
         <h3 class="blend-name">Dill Ranch</h3>
         <span class="blend-profile">Herb · Fresh · Nordic</span>
@@ -712,6 +726,7 @@
       </div>
 
       <div class="blend-card">
+        <img class="blend-img" src="./balboa further pictures/ChatGPT Image Jun 24, 2026 at 04_27_21 PM 5.jpeg" alt="Oregano Flow jar" />
         <span class="blend-number">02</span>
         <h3 class="blend-name">Oregano Flow</h3>
         <span class="blend-profile">Mediterranean · Warm · Round</span>
@@ -720,6 +735,7 @@
       </div>
 
       <div class="blend-card">
+        <img class="blend-img" src="./balboa further pictures/ChatGPT Image Jun 24, 2026 at 04_27_21 PM 3.jpeg" alt="Banh Mi jar" />
         <span class="blend-number">03</span>
         <h3 class="blend-name">Banh Mi</h3>
         <span class="blend-profile">Vietnamese · Umami-deep · Complex</span>
@@ -728,6 +744,7 @@
       </div>
 
       <div class="blend-card">
+        <img class="blend-img" src="./balboa further pictures/ChatGPT Image Jun 24, 2026 at 04_27_21 PM 2.jpeg" alt="Seaweed Drift jar" />
         <span class="blend-number">04</span>
         <h3 class="blend-name">Seaweed Drift</h3>
         <span class="blend-profile">Oceanic · Salty · Savory</span>
@@ -736,6 +753,7 @@
       </div>
 
       <div class="blend-card">
+        <img class="blend-img" src="./balboa further pictures/ChatGPT Image Jun 24, 2026 at 04_27_21 PM.jpeg" alt="Spicy Satay Chili jar" />
         <span class="blend-number">05</span>
         <h3 class="blend-name">Spicy Satay Chili</h3>
         <span class="blend-profile">Heat · Depth · Peanut</span>
@@ -794,7 +812,7 @@
   <!-- OUR STORY -->
   <section class="story-section" id="story">
     <div class="story-image">
-      <img src="./Balboa Carousell/Gemini_Generated_Image_cbhl6ycbhl6ycbhl.png" alt="Balboa story" />
+      <img src="./balboa further pictures/ChatGPT Image Jun 24, 2026 at 04_35_35 PM.png" alt="Lily Chan, founder of Balboa" />
     </div>
     <div class="story-text">
       <span class="label">Our Story</span>
