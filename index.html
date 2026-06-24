@@ -70,6 +70,20 @@
       transition: opacity .2s;
     }
     .nav-links a:hover { opacity: 1; }
+    .nav-buy {
+      position: relative;
+      padding: 10px 22px;
+      background: var(--cream);
+      color: var(--bg);
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      transition: background .2s, color .2s;
+    }
+    .nav-buy:hover { background: var(--accent); color: var(--bg); }
 
     /* ── HERO SLIDESHOW ────────────────────────────────────── */
     .hero {
@@ -299,6 +313,24 @@
       border-radius: 2px;
       align-self: flex-start;
     }
+    .blend-buy {
+      display: block;
+      margin-top: auto;
+      padding: 11px 0;
+      background: transparent;
+      border: 1px solid var(--card-color);
+      color: var(--card-color);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      transition: background .2s, color .2s;
+      position: relative;
+      z-index: 1;
+    }
+    .blend-buy:hover { background: var(--card-color); color: var(--bg); }
 
     /* SVG filter for rough paint border */
     .svg-filters { position: absolute; width: 0; height: 0; }
@@ -682,6 +714,7 @@
       <li><a href="#b2b">B2B</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
     </ul>
+    <a href="#shop" class="nav-buy">Shop Now</a>
   </nav>
 
   <!-- HERO -->
@@ -742,6 +775,7 @@
         <span class="blend-profile">Herb · Fresh · Nordic</span>
         <p class="blend-aura">Finnish design in spice form — clean, bright, unobtrusive. Your everyday blend.</p>
         <span class="blend-tag">Signature</span>
+        <button class="blend-buy">Add to Cart</button>
       </div>
 
       <div class="blend-card">
@@ -759,6 +793,7 @@
         <span class="blend-profile">Mediterranean · Warm · Round</span>
         <p class="blend-aura">The dinner-party blend. Makes every dish look effortlessly considered.</p>
         <span class="blend-tag">Crowd Favourite</span>
+        <button class="blend-buy">Add to Cart</button>
       </div>
 
       <div class="blend-card">
@@ -776,6 +811,7 @@
         <span class="blend-profile">Vietnamese · Umami-deep · Complex</span>
         <p class="blend-aura">Complexity without effort. Lily's heritage in a jar.</p>
         <span class="blend-tag">Founder's Pick</span>
+        <button class="blend-buy">Add to Cart</button>
       </div>
 
       <div class="blend-card">
@@ -793,6 +829,7 @@
         <span class="blend-profile">Oceanic · Salty · Savory</span>
         <p class="blend-aura">The Baltic meets umami. Functional food that doesn't taste functional.</p>
         <span class="blend-tag">New</span>
+        <button class="blend-buy">Add to Cart</button>
       </div>
 
       <div class="blend-card">
@@ -810,6 +847,7 @@
         <span class="blend-profile">Heat · Depth · Peanut</span>
         <p class="blend-aura">The statement blend. For everyone who wants to feel their food.</p>
         <span class="blend-tag">Bold</span>
+        <button class="blend-buy">Add to Cart</button>
       </div>
 
     </div>
