@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BALBOA — High-Protein Umami Seasoning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=Caveat:wght@500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #0e0d0a;
-      --cream:    #f0e8d0;
-      --muted:    #a09880;
-      --sage:     #5a6b52;
-      --accent:   #c9a84c;
+      --bg:      #0e0d0a;
+      --cream:   #f0e8d0;
+      --muted:   #a09880;
+      --sage:    #5a6b52;
+      --accent:  #c9a84c;
+      --dark2:   #141310;
     }
 
     html { scroll-behavior: smooth; }
@@ -28,7 +29,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ─────────────────────────────────────────────── */
+    /* ── NAV ───────────────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -37,9 +38,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 28px 48px;
-      mix-blend-mode: normal;
     }
-
     nav::before {
       content: '';
       position: absolute;
@@ -47,7 +46,6 @@
       background: linear-gradient(to bottom, rgba(14,13,10,.85) 0%, transparent 100%);
       pointer-events: none;
     }
-
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
@@ -56,14 +54,12 @@
       text-decoration: none;
       position: relative;
     }
-
     .nav-links {
       display: flex;
       gap: 36px;
       list-style: none;
       position: relative;
     }
-
     .nav-links a {
       color: var(--cream);
       text-decoration: none;
@@ -73,44 +69,31 @@
       opacity: .75;
       transition: opacity .2s;
     }
-
     .nav-links a:hover { opacity: 1; }
 
-    /* ── HERO / SLIDESHOW ────────────────────────────────── */
+    /* ── HERO SLIDESHOW ────────────────────────────────────── */
     .hero {
       position: relative;
       height: 100vh;
       overflow: hidden;
     }
-
     .slide {
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: none;
     }
-
     .slide.active { opacity: 1; }
-
     .slide img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
     }
-
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(14,13,10,.3) 0%,
-        rgba(14,13,10,.15) 50%,
-        rgba(14,13,10,.6) 100%
-      );
+      background: linear-gradient(160deg, rgba(14,13,10,.3) 0%, rgba(14,13,10,.15) 50%, rgba(14,13,10,.65) 100%);
     }
-
     .hero-content {
       position: absolute;
       bottom: 6vh;
@@ -118,7 +101,6 @@
       right: 48px;
       max-width: 680px;
     }
-
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(56px, 9vw, 120px);
@@ -127,7 +109,6 @@
       color: var(--cream);
       margin-bottom: 24px;
     }
-
     .hero-content p {
       font-size: 15px;
       line-height: 1.7;
@@ -135,7 +116,6 @@
       max-width: 400px;
       letter-spacing: .03em;
     }
-
     .hero-cta {
       display: inline-block;
       margin-top: 36px;
@@ -148,60 +128,42 @@
       text-transform: uppercase;
       transition: background .25s, color .25s;
     }
-
-    .hero-cta:hover {
-      background: var(--cream);
-      color: var(--bg);
-    }
-
-    /* slide counter */
+    .hero-cta:hover { background: var(--cream); color: var(--bg); }
     .slide-dots {
       position: absolute;
-      bottom: 36px;
-      right: 48px;
+      bottom: 36px; right: 48px;
       display: flex;
       gap: 8px;
     }
-
     .dot {
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: rgba(240,232,208,.35);
       transition: background .3s;
     }
-
     .dot.active { background: var(--cream); }
 
-    /* ── TAGLINE SECTION ─────────────────────────────────── */
+    /* ── TAGLINE ───────────────────────────────────────────── */
     .tagline-section {
       padding: 120px 48px;
       max-width: 1100px;
       margin: 0 auto;
       border-bottom: 1px solid rgba(240,232,208,.1);
     }
-
     .tagline-section h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(28px, 4vw, 52px);
       line-height: 1.2;
       font-weight: 400;
-      color: var(--cream);
       max-width: 750px;
     }
-
-    .tagline-section h2 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
+    .tagline-section h2 em { font-style: italic; color: var(--accent); }
     .tagline-cols {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 48px;
       margin-top: 80px;
     }
-
     .tagline-col h3 {
       font-size: 11px;
       letter-spacing: .2em;
@@ -209,19 +171,159 @@
       color: var(--sage);
       margin-bottom: 14px;
     }
+    .tagline-col p { font-size: 14px; line-height: 1.8; color: var(--muted); }
 
-    .tagline-col p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    /* ── CAROUSEL SECTION ────────────────────────────────── */
-    .carousel-section {
-      padding: 80px 0 80px 48px;
+    /* ── FIVE BLENDS ───────────────────────────────────────── */
+    .blends-section {
+      padding: 120px 48px;
+      background: #0a0907;
+      position: relative;
       overflow: hidden;
     }
+    .blends-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 30%, rgba(90,107,82,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 70%, rgba(201,168,76,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blends-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+    .blends-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400;
+      margin-bottom: 64px;
+      max-width: 500px;
+    }
+    .blends-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .blend-card {
+      position: relative;
+      padding: 36px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      cursor: default;
+    }
+    /* painted / rough frame effect using SVG filter + pseudo */
+    .blend-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2px;
+      background: var(--card-bg, #1a1810);
+      filter: url(#rough);
+      z-index: 0;
+    }
+    .blend-card::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 2px solid var(--card-color, #5a6b52);
+      border-radius: 4px;
+      opacity: .5;
+      filter: url(#rough);
+      z-index: 0;
+      transition: opacity .3s;
+    }
+    .blend-card:hover::after { opacity: 1; }
+    .blend-card > * { position: relative; z-index: 1; }
 
+    .blend-card:nth-child(1) { --card-color: #7aab72; --card-bg: #111a10; }
+    .blend-card:nth-child(2) { --card-color: #c9a04c; --card-bg: #1a1610; }
+    .blend-card:nth-child(3) { --card-color: #d4835a; --card-bg: #1a1208; }
+    .blend-card:nth-child(4) { --card-color: #5a9bad; --card-bg: #0a1418; }
+    .blend-card:nth-child(5) { --card-color: #c9504c; --card-bg: #1a0e0e; }
+
+    .blend-number {
+      font-family: 'Caveat', cursive;
+      font-size: 13px;
+      color: var(--card-color);
+      opacity: .7;
+    }
+    .blend-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--cream);
+    }
+    .blend-profile {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--card-color);
+      opacity: .85;
+    }
+    .blend-aura {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 4px;
+    }
+    .blend-tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border: 1px solid var(--card-color);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--card-color);
+      opacity: .7;
+      border-radius: 2px;
+      align-self: flex-start;
+    }
+
+    /* SVG filter for rough paint border */
+    .svg-filters { position: absolute; width: 0; height: 0; }
+
+    /* ── NUTRITION STRIP ───────────────────────────────────── */
+    .nutrition-strip {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: var(--sage);
+      overflow: hidden;
+    }
+    .nutrition-item {
+      flex: 1;
+      text-align: center;
+      padding: 40px 24px;
+      border-right: 1px solid rgba(240,232,208,.2);
+    }
+    .nutrition-item:last-child { border-right: none; }
+    .nutrition-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      color: var(--cream);
+      display: block;
+    }
+    .nutrition-label {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(240,232,208,.7);
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ── CAROUSEL ──────────────────────────────────────────── */
+    .carousel-section { padding: 80px 0 80px 48px; overflow: hidden; }
     .carousel-label {
       font-size: 11px;
       letter-spacing: .2em;
@@ -229,7 +331,6 @@
       color: var(--sage);
       margin-bottom: 32px;
     }
-
     .carousel-track {
       display: flex;
       gap: 20px;
@@ -239,55 +340,39 @@
       user-select: none;
       padding-right: 48px;
     }
-
     .carousel-track::-webkit-scrollbar { display: none; }
     .carousel-track:active { cursor: grabbing; }
-
     .carousel-item {
       flex-shrink: 0;
       width: clamp(300px, 40vw, 540px);
       aspect-ratio: 4/3;
       overflow: hidden;
-      border-radius: 2px;
     }
-
     .carousel-item img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       display: block;
       transition: transform .6s ease;
     }
-
     .carousel-item:hover img { transform: scale(1.04); }
 
-    /* ── POLAROID SECTION ────────────────────────────────── */
+    /* ── POLAROID ──────────────────────────────────────────── */
     .polaroid-section {
       padding: 100px 48px;
       border-top: 1px solid rgba(240,232,208,.1);
     }
-
     .polaroid-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 56px;
     }
-
     .polaroid-header h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(24px, 3vw, 42px);
       font-weight: 400;
     }
-
-    .polaroid-header p {
-      font-size: 13px;
-      color: var(--muted);
-      max-width: 280px;
-      text-align: right;
-      line-height: 1.6;
-    }
-
+    .polaroid-header p { font-size: 13px; color: var(--muted); max-width: 280px; text-align: right; line-height: 1.6; }
     .polaroid-row {
       display: flex;
       gap: 28px;
@@ -295,9 +380,7 @@
       scrollbar-width: none;
       padding-bottom: 12px;
     }
-
     .polaroid-row::-webkit-scrollbar { display: none; }
-
     .polaroid {
       flex-shrink: 0;
       background: #f0ebe0;
@@ -307,22 +390,17 @@
       transform: rotate(var(--rot));
       transition: transform .3s ease, box-shadow .3s ease;
     }
-
     .polaroid:hover {
       transform: rotate(0deg) scale(1.04);
       box-shadow: 0 16px 60px rgba(0,0,0,.6);
       z-index: 2;
     }
-
     .polaroid img {
-      width: 100%;
-      aspect-ratio: 1;
+      width: 100%; aspect-ratio: 1;
       object-fit: cover;
       display: block;
       filter: saturate(.9) contrast(1.05);
     }
-
-    /* film strip look on polaroid top */
     .polaroid::before {
       content: '2000  F 8.0    45/2.8 120';
       display: block;
@@ -333,56 +411,184 @@
       margin-bottom: 8px;
     }
 
-    /* ── ABOUT / PRODUCT STRIP ───────────────────────────── */
-    .about-section {
+    /* ── OUR STORY ─────────────────────────────────────────── */
+    .story-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 70vh;
+      min-height: 80vh;
     }
-
-    .about-text {
+    .story-image { overflow: hidden; }
+    .story-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .story-text {
       padding: 100px 64px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background: #141310;
     }
-
-    .about-text .label {
+    .story-text .label {
       font-size: 11px;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--sage);
       margin-bottom: 28px;
     }
-
-    .about-text h2 {
+    .story-text h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 3vw, 44px);
+      font-size: clamp(26px, 3vw, 40px);
       font-weight: 400;
       line-height: 1.25;
       margin-bottom: 28px;
     }
-
-    .about-text p {
+    .story-text p {
       font-size: 14px;
-      line-height: 1.9;
+      line-height: 1.95;
       color: var(--muted);
-      max-width: 420px;
+      max-width: 460px;
     }
-
-    .about-image {
-      overflow: hidden;
+    .story-text p + p { margin-top: 16px; }
+    .story-blends-list {
+      margin-top: 32px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .story-blends-list li {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 16px;
+      position: relative;
     }
+    .story-blends-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .story-blends-list span { color: var(--cream); }
 
-    /* ── FOOTER ──────────────────────────────────────────── */
+    /* ── NEWSLETTER ────────────────────────────────────────── */
+    .newsletter-section {
+      padding: 120px 48px;
+      text-align: center;
+      background: #0a0907;
+      border-top: 1px solid rgba(240,232,208,.1);
+    }
+    .newsletter-section .label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .newsletter-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .newsletter-section h2 em { font-style: italic; color: var(--accent); }
+    .newsletter-section p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px 20px;
+      background: rgba(240,232,208,.06);
+      border: 1px solid rgba(240,232,208,.2);
+      border-right: none;
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+    }
+    .newsletter-form input::placeholder { color: var(--muted); }
+    .newsletter-form button {
+      padding: 16px 28px;
+      background: var(--cream);
+      color: var(--bg);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .newsletter-form button:hover { background: var(--accent); }
+
+    /* ── B2B SECTION ───────────────────────────────────────── */
+    .b2b-section {
+      padding: 120px 48px;
+      border-top: 1px solid rgba(240,232,208,.1);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .b2b-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .b2b-text .label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 20px;
+    }
+    .b2b-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+    .b2b-text p { font-size: 14px; line-height: 1.9; color: var(--muted); }
+    .b2b-contact {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 14px 36px;
+      border: 1px solid var(--cream);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transition: background .25s, color .25s;
+    }
+    .b2b-contact:hover { background: var(--cream); color: var(--bg); }
+    .b2b-perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .b2b-perk {
+      padding: 28px 24px;
+      background: #141310;
+      border-left: 2px solid var(--sage);
+    }
+    .b2b-perk h4 {
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .b2b-perk p { font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
     footer {
       padding: 60px 48px;
       border-top: 1px solid rgba(240,232,208,.1);
@@ -390,33 +596,42 @@
       justify-content: space-between;
       align-items: center;
     }
-
     footer .footer-logo {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       letter-spacing: .25em;
       color: var(--cream);
     }
+    footer p { font-size: 12px; color: var(--muted); letter-spacing: .05em; }
 
-    footer p {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: .05em;
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .blends-grid { grid-template-columns: repeat(2, 1fr); }
+      .blends-grid .blend-card:last-child { grid-column: 1 / -1; }
+      .story-section { grid-template-columns: 1fr; }
+      .story-image { height: 55vw; }
+      .story-text { padding: 60px 24px; }
+      .b2b-inner { grid-template-columns: 1fr; gap: 48px; }
     }
-
-    /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       nav { padding: 20px 24px; }
-      .hero-content { left: 24px; right: 24px; bottom: 10vh; }
+      .hero-content { left: 24px; right: 24px; }
       .tagline-section { padding: 80px 24px; }
       .tagline-cols { grid-template-columns: 1fr; gap: 32px; }
+      .blends-section { padding: 80px 24px; }
+      .blends-grid { grid-template-columns: 1fr; }
+      .blends-grid .blend-card:last-child { grid-column: auto; }
+      .nutrition-strip { flex-wrap: wrap; }
+      .nutrition-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(240,232,208,.2); }
       .carousel-section { padding-left: 24px; }
       .polaroid-section { padding: 80px 24px; }
       .polaroid-header { flex-direction: column; gap: 16px; }
       .polaroid-header p { text-align: left; }
-      .about-section { grid-template-columns: 1fr; }
-      .about-image { height: 50vw; }
-      .about-text { padding: 60px 24px; }
+      .newsletter-section { padding: 80px 24px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-right: 1px solid rgba(240,232,208,.2); border-bottom: none; }
+      .b2b-section { padding: 80px 24px; }
+      .b2b-perks { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 16px; text-align: center; }
       .slide-dots { right: 24px; }
     }
@@ -424,125 +639,232 @@
 </head>
 <body>
 
+  <!-- SVG filter for painted/rough border effect on blend cards -->
+  <svg class="svg-filters" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="3" seed="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">BALBOA</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#blends">Blends</a></li>
       <li><a href="#story">Story</a></li>
-      <li><a href="#shop">Shop</a></li>
+      <li><a href="#b2b">B2B</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
     </ul>
   </nav>
 
-  <!-- HERO SLIDESHOW (1.5 s clean cut) -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="slide active" id="slide-0">
-      <img src="./Balboa Carousell/Gemini_Generated_Image_afgwucafgwucafgw.png" alt="Balboa on shelf" />
-    </div>
-    <div class="slide" id="slide-1">
-      <img src="./Balboa Carousell/Gemini_Generated_Image_cbhl6ycbhl6ycbhl.png" alt="Balboa on table" />
-    </div>
-    <div class="slide" id="slide-2">
-      <img src="./Balboa Carousell/Gemini_Generated_Image_vdidbevdidbevdid.png" alt="Balboa with oysters" />
-    </div>
+    <div class="slide active"><img src="./Balboa Carousell/Gemini_Generated_Image_afgwucafgwucafgw.png" alt="Balboa on shelf" /></div>
+    <div class="slide"><img src="./Balboa Carousell/Gemini_Generated_Image_cbhl6ycbhl6ycbhl.png" alt="Balboa on table" /></div>
+    <div class="slide"><img src="./Balboa Carousell/Gemini_Generated_Image_vdidbevdidbevdid.png" alt="Balboa with oysters" /></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>BALBOA</h1>
       <p>High-protein umami seasoning.<br>Five chef-crafted blends.<br>Nutritional yeast, reimagined.</p>
-      <a href="#shop" class="hero-cta">Shop Now</a>
+      <a href="#blends" class="hero-cta">Discover the Blends</a>
     </div>
     <div class="slide-dots">
-      <div class="dot active" id="dot-0"></div>
-      <div class="dot" id="dot-1"></div>
-      <div class="dot" id="dot-2"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
   </section>
 
-  <!-- TAGLINE SECTION -->
-  <section class="tagline-section" id="about">
+  <!-- TAGLINE -->
+  <section class="tagline-section">
     <h2>The seasoning that makes<br>everything taste <em>more like itself.</em></h2>
     <div class="tagline-cols">
       <div class="tagline-col">
         <h3>High Protein</h3>
-        <p>Every blend is built on a nutritional yeast base — naturally rich in complete protein and B vitamins, without the supplement aftertaste.</p>
+        <p>15g protein per serving. Built on a nutritional yeast base — naturally rich in complete protein and a full B-vitamin complex, including B12.</p>
       </div>
       <div class="tagline-col">
         <h3>Five Blends</h3>
-        <p>Five distinct flavor profiles, each developed with chefs. From bright citrus-herb to deep smoky umami — a blend for every dish.</p>
+        <p>Five distinct flavor profiles, each developed with chefs. From bright Nordic dill to deep smoky umami — a blend for every dish, every table.</p>
       </div>
       <div class="tagline-col">
-        <h3>Reimagined</h3>
-        <p>Nutritional yeast has always been a well-kept secret among cooks. Balboa brings it to the table — beautifully packaged, endlessly versatile.</p>
+        <h3>Counterworthy</h3>
+        <p>Designed to live on your counter, not hide in your cabinet. 100% plant-based, gluten-free, 0g sugar. No additives. No compromises.</p>
       </div>
     </div>
   </section>
+
+  <!-- FIVE BLENDS -->
+  <section class="blends-section" id="blends">
+    <p class="blends-label">The Collection</p>
+    <h2 class="blends-title">Five blends.<br>One obsession.</h2>
+    <div class="blends-grid">
+
+      <div class="blend-card">
+        <span class="blend-number">01</span>
+        <h3 class="blend-name">Dill Ranch</h3>
+        <span class="blend-profile">Herb · Fresh · Nordic</span>
+        <p class="blend-aura">Finnish design in spice form — clean, bright, unobtrusive. Your everyday blend.</p>
+        <span class="blend-tag">Signature</span>
+      </div>
+
+      <div class="blend-card">
+        <span class="blend-number">02</span>
+        <h3 class="blend-name">Oregano Flow</h3>
+        <span class="blend-profile">Mediterranean · Warm · Round</span>
+        <p class="blend-aura">The dinner-party blend. Makes every dish look effortlessly considered.</p>
+        <span class="blend-tag">Crowd Favourite</span>
+      </div>
+
+      <div class="blend-card">
+        <span class="blend-number">03</span>
+        <h3 class="blend-name">Banh Mi</h3>
+        <span class="blend-profile">Vietnamese · Umami-deep · Complex</span>
+        <p class="blend-aura">Complexity without effort. Lily's heritage in a jar.</p>
+        <span class="blend-tag">Founder's Pick</span>
+      </div>
+
+      <div class="blend-card">
+        <span class="blend-number">04</span>
+        <h3 class="blend-name">Seaweed Drift</h3>
+        <span class="blend-profile">Oceanic · Salty · Savory</span>
+        <p class="blend-aura">The Baltic meets umami. Functional food that doesn't taste functional.</p>
+        <span class="blend-tag">New</span>
+      </div>
+
+      <div class="blend-card">
+        <span class="blend-number">05</span>
+        <h3 class="blend-name">Spicy Satay Chili</h3>
+        <span class="blend-profile">Heat · Depth · Peanut</span>
+        <p class="blend-aura">The statement blend. For everyone who wants to feel their food.</p>
+        <span class="blend-tag">Bold</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NUTRITION STRIP -->
+  <div class="nutrition-strip">
+    <div class="nutrition-item">
+      <span class="nutrition-value">15g</span>
+      <span class="nutrition-label">Protein per serving</span>
+    </div>
+    <div class="nutrition-item">
+      <span class="nutrition-value">B12</span>
+      <span class="nutrition-label">Full B-vitamin complex</span>
+    </div>
+    <div class="nutrition-item">
+      <span class="nutrition-value">0g</span>
+      <span class="nutrition-label">Sugar & additives</span>
+    </div>
+    <div class="nutrition-item">
+      <span class="nutrition-value">100%</span>
+      <span class="nutrition-label">Plant-based & gluten-free</span>
+    </div>
+  </div>
 
   <!-- DRAGGABLE CAROUSEL -->
   <section class="carousel-section">
     <p class="carousel-label">In the wild</p>
     <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-item">
-        <img src="./Balboa Carousell/Gemini_Generated_Image_vdidbevdidbevdid.png" alt="Balboa with seafood spread" />
-      </div>
-      <div class="carousel-item">
-        <img src="./Balboa Carousell/Gemini_Generated_Image_cbhl6ycbhl6ycbhl.png" alt="Balboa at dinner table" />
-      </div>
-      <div class="carousel-item">
-        <img src="./Balboa Carousell/Gemini_Generated_Image_afgwucafgwucafgw.png" alt="Balboa on restaurant shelf" />
-      </div>
+      <div class="carousel-item"><img src="./Balboa Carousell/Gemini_Generated_Image_vdidbevdidbevdid.png" alt="Balboa with seafood" /></div>
+      <div class="carousel-item"><img src="./Balboa Carousell/Gemini_Generated_Image_cbhl6ycbhl6ycbhl.png" alt="Balboa at dinner" /></div>
+      <div class="carousel-item"><img src="./Balboa Carousell/Gemini_Generated_Image_afgwucafgwucafgw.png" alt="Balboa on shelf" /></div>
     </div>
   </section>
 
-  <!-- POLAROID SECTION -->
-  <section class="polaroid-section" id="story">
+  <!-- POLAROID ROW -->
+  <section class="polaroid-section">
     <div class="polaroid-header">
       <h2>Real moments,<br>real flavor.</h2>
       <p>Shot on film by the people who love it most — bartenders, chefs, and late-night cooks.</p>
     </div>
     <div class="polaroid-row">
-      <div class="polaroid" style="--rot: -2.5deg">
-        <img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.33.png" alt="Bar moment with Balboa" />
-      </div>
-      <div class="polaroid" style="--rot: 1.8deg">
-        <img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.33 2.png" alt="Bartender with Balboa" />
-      </div>
-      <div class="polaroid" style="--rot: -1.2deg">
-        <img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.34.png" alt="Chef with Balboa" />
-      </div>
-      <div class="polaroid" style="--rot: 2.3deg">
-        <img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.35.png" alt="Balboa golden pour" />
-      </div>
-      <div class="polaroid" style="--rot: -1.6deg">
-        <img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.36.png" alt="Evening with Balboa" />
-      </div>
+      <div class="polaroid" style="--rot:-2.5deg"><img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.33.png" alt="" /></div>
+      <div class="polaroid" style="--rot:1.8deg"><img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.33 2.png" alt="" /></div>
+      <div class="polaroid" style="--rot:-1.2deg"><img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.34.png" alt="" /></div>
+      <div class="polaroid" style="--rot:2.3deg"><img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.35.png" alt="" /></div>
+      <div class="polaroid" style="--rot:-1.6deg"><img src="./Balboa Polaroid Foto Reihe/Image 24.06.26 at 15.36.png" alt="" /></div>
     </div>
   </section>
 
-  <!-- ABOUT SPLIT SECTION -->
-  <section class="about-section">
-    <div class="about-text">
-      <span class="label">Our Story</span>
-      <h2>Born in the kitchen.<br>Made for the table.</h2>
-      <p>Balboa started with a simple question: why does nutritional yeast taste so good, and why isn't anyone doing more with it? Five blends later, we have our answer. Each one is crafted to layer depth, protein, and umami onto whatever you're already making — without changing what it is.</p>
+  <!-- OUR STORY -->
+  <section class="story-section" id="story">
+    <div class="story-image">
+      <img src="./Balboa Carousell/Gemini_Generated_Image_cbhl6ycbhl6ycbhl.png" alt="Balboa story" />
     </div>
-    <div class="about-image">
-      <img src="./Balboa Carousell/Gemini_Generated_Image_afgwucafgwucafgw.png" alt="Balboa in its natural habitat" />
+    <div class="story-text">
+      <span class="label">Our Story</span>
+      <h2>Born on Balboa Street.<br>Made for every table.</h2>
+      <p>Lily Chan grew up in San Francisco — on Balboa Street. Her Vietnamese parents cooked every day. The smell of satay, lemongrass, fresh coriander. She learned: food is home. Food is love.</p>
+      <p>Years later, she lives with her Finnish husband in Helsinki. She's vegan. She misses the flavors of her childhood — and wants to pass them on. To her children. To her table. To everyone who understands that good food is more than nutrition.</p>
+      <p>So she started blending. Vietnamese seasoning tradition, Scandinavian purity, plant-based protein as a base.</p>
+      <ul class="story-blends-list">
+        <li><span>Dill Ranch</span> — the Nordic freshness of her new home</li>
+        <li><span>Spicy Satay Chili</span> — her mother's kitchen, in a jar</li>
+        <li><span>Oregano Flow</span> — Mediterranean evenings with friends</li>
+        <li><span>Banh Mi</span> — Vietnam, Balboa Street, the taste of home</li>
+        <li><span>Seaweed Drift</span> — the Baltic Sea before Helsinki, umami-deep</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="newsletter">
+    <p class="label">The Counter</p>
+    <h2>Umami science.<br><em>Curated, not spammed.</em></h2>
+    <p>A letter about the science of umami, seasonal pairings, and what actually makes food good. Every two weeks. From Lily's kitchen to your inbox.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- B2B -->
+  <section class="b2b-section" id="b2b">
+    <div class="b2b-inner">
+      <div class="b2b-text">
+        <span class="label">Partnerships</span>
+        <h2>Bring Balboa<br>to your space.</h2>
+        <p>We work with restaurants, cafés, hotels, and concept stores that share our belief: that food should be beautiful, honest, and memorable. If that sounds like you, let's talk.</p>
+        <a href="mailto:hello@balboa.co" class="b2b-contact">Get in Touch</a>
+      </div>
+      <div class="b2b-perks">
+        <div class="b2b-perk">
+          <h4>Restaurants</h4>
+          <p>Counter-ready packaging. Chef-tested blends. Menu integration support.</p>
+        </div>
+        <div class="b2b-perk">
+          <h4>Retail</h4>
+          <p>Design-forward product that sells itself. Minimum orders from 24 units.</p>
+        </div>
+        <div class="b2b-perk">
+          <h4>Hotels</h4>
+          <p>Branded gifting, minibar formats, and in-room dining partnerships.</p>
+        </div>
+        <div class="b2b-perk">
+          <h4>Events</h4>
+          <p>Custom blends and co-branded editions for launches, pop-ups, and tastings.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <span class="footer-logo">BALBOA</span>
-    <p>High-protein umami seasoning · Five chef-crafted blends</p>
+    <p>Developed in Helsinki · Rooted in Balboa Street, San Francisco</p>
     <p>© 2026 Balboa</p>
   </footer>
 
   <script>
-    // ── Hero slideshow: hard cut every 1500ms ──────────────
+    // Hero slideshow — hard cut every 1500ms
     const slides = document.querySelectorAll('.slide');
     const dots   = document.querySelectorAll('.dot');
     let current  = 0;
-
     setInterval(() => {
       slides[current].classList.remove('active');
       dots[current].classList.remove('active');
@@ -551,23 +873,16 @@
       dots[current].classList.add('active');
     }, 1500);
 
-    // ── Draggable carousel ─────────────────────────────────
+    // Draggable carousel
     const track = document.getElementById('carouselTrack');
     let isDown = false, startX, scrollLeft;
-
-    track.addEventListener('mousedown', e => {
-      isDown = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
+    track.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
     track.addEventListener('mouseleave', () => isDown = false);
-    track.addEventListener('mouseup',    () => isDown = false);
-    track.addEventListener('mousemove',  e => {
+    track.addEventListener('mouseup', () => isDown = false);
+    track.addEventListener('mousemove', e => {
       if (!isDown) return;
       e.preventDefault();
-      const x    = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      track.scrollLeft = scrollLeft - walk;
+      track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX) * 1.5;
     });
   </script>
 
