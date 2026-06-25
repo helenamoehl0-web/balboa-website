@@ -1389,7 +1389,7 @@
         <rect x="24" y="74" width="52" height="10" rx="1" fill="${j.lid}" opacity=".35"/>`;
     }
 
-    let current = 0;
+    let quizStep = 0;
     const scores = { dill:0, oregano:0, banh:0, seaweed:0, satay:0 };
 
     function startQuiz() {
@@ -1399,9 +1399,9 @@
     }
 
     function renderQuestion() {
-      const q = questions[current];
-      document.getElementById('quizCounter').textContent = `${current+1} / ${questions.length}`;
-      document.getElementById('quizProgress').style.width = `${(current / questions.length) * 100}%`;
+      const q = questions[quizStep];
+      document.getElementById('quizCounter').textContent = `${quizStep+1} / ${questions.length}`;
+      document.getElementById('quizProgress').style.width = `${(quizStep / questions.length) * 100}%`;
       const qEl = document.getElementById('quizQuestion');
       qEl.style.opacity = 0;
       qEl.textContent = q.q;
@@ -1425,8 +1425,8 @@
       btn.classList.add('selected');
       scores[blend]++;
       setTimeout(() => {
-        current++;
-        if (current < questions.length) { renderQuestion(); }
+        quizStep++;
+        if (quizStep < questions.length) { renderQuestion(); }
         else { showResult(); }
       }, 400);
     }
@@ -1450,7 +1450,7 @@
 
     function resetQuiz() {
       Object.keys(scores).forEach(k => scores[k] = 0);
-      current = 0;
+      quizStep = 0;
       document.getElementById('quizResult').classList.remove('active');
       document.getElementById('quizQuestions').classList.remove('active');
       document.getElementById('quizStart').style.display = 'flex';
