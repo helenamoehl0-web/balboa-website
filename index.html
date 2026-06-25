@@ -1313,7 +1313,7 @@
 
   <script>
     history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
+    window.addEventListener('load', () => window.scrollTo(0, 0));
 
     // Hero slideshow — hard cut every 1500ms
     const slides = document.querySelectorAll('.slide');
