@@ -1040,57 +1040,6 @@
     </div>
   </section>
 
-  <!-- QUIZ -->
-  <section class="quiz-section" id="quiz">
-
-    <!-- START SCREEN -->
-    <div class="quiz-start" id="quizStart">
-      <p class="quiz-start-eyebrow quiz-animate">Find Your Blend</p>
-      <h2 class="quiz-start-title quiz-animate">Which Blend<br><em>Are You?</em></h2>
-      <p class="quiz-start-sub quiz-animate">4 questions. One blend. A shareable result that tells the world what kind of cook — and person — you are.</p>
-      <button class="quiz-start-btn quiz-animate" onclick="startQuiz()">
-        Start Quiz
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </button>
-      <div class="quiz-start-jars">
-        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#7aab72"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#7aab72"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#111a10" stroke="#7aab72" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
-        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#c9a04c"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#c9a04c"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#1a1610" stroke="#c9a04c" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
-        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#d4835a"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#d4835a"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#241208" stroke="#d4835a" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
-        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#5a9bad"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#5a9bad"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#081420" stroke="#5a9bad" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
-        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#c9504c"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#c9504c"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#200808" stroke="#c9504c" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
-      </div>
-    </div>
-
-    <!-- QUESTION SCREEN -->
-    <div class="quiz-questions" id="quizQuestions">
-      <div class="quiz-topbar">
-        <span class="quiz-q-counter" id="quizCounter">1 / 4</span>
-        <div class="quiz-progress-track">
-          <div class="quiz-progress-fill" id="quizProgress"></div>
-        </div>
-        <button class="quiz-skip" onclick="resetQuiz()">✕ Exit</button>
-      </div>
-      <h3 class="quiz-question" id="quizQuestion"></h3>
-      <div class="quiz-options" id="quizOptions"></div>
-    </div>
-
-    <!-- RESULT SCREEN -->
-    <div class="quiz-result" id="quizResult">
-      <p class="result-eyebrow quiz-animate">Your Balboa Blend</p>
-      <p class="result-you-are quiz-animate">You are</p>
-      <h2 class="result-name quiz-animate" id="resultName"></h2>
-      <p class="result-profile quiz-animate" id="resultProfile"></p>
-      <svg class="result-jar" id="resultJar" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
-      <p class="result-aura quiz-animate" id="resultAura"></p>
-      <div class="result-actions quiz-animate">
-        <button class="result-btn result-btn-primary" onclick="downloadCard()">Save & Share →</button>
-        <button class="result-btn result-btn-secondary" onclick="resetQuiz()">Retake Quiz</button>
-        <a class="result-btn result-btn-secondary" href="#blends">Shop Your Blend</a>
-      </div>
-    </div>
-
-  </section>
-
   <!-- FIVE BLENDS -->
   <section class="blends-section" id="blends">
     <p class="blends-label">The Collection</p>
@@ -1209,6 +1158,57 @@
       <span class="nutrition-label">Plant-based & gluten-free</span>
     </div>
   </div>
+
+  <!-- QUIZ -->
+  <section class="quiz-section" id="quiz">
+
+    <!-- START SCREEN -->
+    <div class="quiz-start" id="quizStart">
+      <p class="quiz-start-eyebrow quiz-animate">Find Your Blend</p>
+      <h2 class="quiz-start-title quiz-animate">Which Blend<br><em>Are You?</em></h2>
+      <p class="quiz-start-sub quiz-animate">4 questions. One blend. A shareable result that tells the world what kind of cook — and person — you are.</p>
+      <button class="quiz-start-btn quiz-animate" onclick="startQuiz()">
+        Start Quiz
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </button>
+      <div class="quiz-start-jars">
+        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#7aab72"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#7aab72"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#111a10" stroke="#7aab72" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
+        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#c9a04c"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#c9a04c"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#1a1610" stroke="#c9a04c" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
+        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#d4835a"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#d4835a"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#241208" stroke="#d4835a" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
+        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#5a9bad"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#5a9bad"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#081420" stroke="#5a9bad" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
+        <svg viewBox="0 0 100 130" fill="none"><rect x="30" y="2" width="40" height="10" rx="3" fill="#c9504c"/><rect x="22" y="10" width="56" height="8" rx="2" fill="#c9504c"/><path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="#200808" stroke="#c9504c" stroke-width="1.5"/><rect x="24" y="38" width="52" height="28" rx="2" fill="#f0e8d0" opacity=".9"/><text x="50" y="56" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#0e0d0a">balboa</text></svg>
+      </div>
+    </div>
+
+    <!-- QUESTION SCREEN -->
+    <div class="quiz-questions" id="quizQuestions">
+      <div class="quiz-topbar">
+        <span class="quiz-q-counter" id="quizCounter">1 / 4</span>
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill" id="quizProgress"></div>
+        </div>
+        <button class="quiz-skip" onclick="resetQuiz()">✕ Exit</button>
+      </div>
+      <h3 class="quiz-question" id="quizQuestion"></h3>
+      <div class="quiz-options" id="quizOptions"></div>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div class="quiz-result" id="quizResult">
+      <p class="result-eyebrow quiz-animate">Your Balboa Blend</p>
+      <p class="result-you-are quiz-animate">You are</p>
+      <h2 class="result-name quiz-animate" id="resultName"></h2>
+      <p class="result-profile quiz-animate" id="resultProfile"></p>
+      <svg class="result-jar" id="resultJar" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      <p class="result-aura quiz-animate" id="resultAura"></p>
+      <div class="result-actions quiz-animate">
+        <button class="result-btn result-btn-primary" onclick="downloadCard()">Save & Share →</button>
+        <button class="result-btn result-btn-secondary" onclick="resetQuiz()">Retake Quiz</button>
+        <a class="result-btn result-btn-secondary" href="#blends">Shop Your Blend</a>
+      </div>
+    </div>
+
+  </section>
 
   <!-- DRAGGABLE CAROUSEL -->
   <section class="carousel-section">
