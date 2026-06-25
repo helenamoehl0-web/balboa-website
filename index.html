@@ -1455,7 +1455,6 @@
       document.getElementById('quizQuestions').classList.remove('active');
       document.getElementById('quizStart').style.display = 'flex';
       document.getElementById('quizProgress').style.width = '0%';
-      document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
     }
 
     function downloadCard() {
@@ -1512,8 +1511,6 @@
       a.href = canvas.toDataURL('image/png');
       a.click();
     }
-
-    renderQuestion();
 
     // Draggable carousel
     const track = document.getElementById('carouselTrack');
