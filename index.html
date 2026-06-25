@@ -187,6 +187,201 @@
     }
     .tagline-col p { font-size: 14px; line-height: 1.8; color: var(--muted); }
 
+    /* ── QUIZ ──────────────────────────────────────────────── */
+    .quiz-section {
+      padding: 120px 48px;
+      background: #0a0907;
+      border-top: 1px solid rgba(240,232,208,.08);
+    }
+    .quiz-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .quiz-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .quiz-title em { font-style: italic; color: var(--accent); }
+    .quiz-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 56px;
+      max-width: 420px;
+      line-height: 1.7;
+    }
+    .quiz-inner { max-width: 700px; }
+
+    /* progress bar */
+    .quiz-progress-track {
+      height: 2px;
+      background: rgba(240,232,208,.1);
+      margin-bottom: 48px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width .4s ease;
+      width: 0%;
+    }
+    .quiz-step-label {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .quiz-question {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 400;
+      margin-bottom: 36px;
+      line-height: 1.3;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .quiz-option {
+      padding: 20px 24px;
+      background: rgba(240,232,208,.04);
+      border: 1px solid rgba(240,232,208,.12);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, transform .15s;
+      border-radius: 2px;
+    }
+    .quiz-option:hover {
+      background: rgba(240,232,208,.09);
+      border-color: rgba(240,232,208,.35);
+      transform: translateY(-2px);
+    }
+    .quiz-option.selected {
+      background: rgba(201,168,76,.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .quiz-option-emoji {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    /* result */
+    .quiz-result { display: none; }
+    .quiz-result.visible { display: block; }
+    .quiz-steps { display: block; }
+    .quiz-steps.hidden { display: none; }
+
+    .result-card {
+      background: #141310;
+      border: 1px solid rgba(240,232,208,.1);
+      padding: 56px 48px;
+      max-width: 560px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .result-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--result-glow, rgba(90,107,82,.2)) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .result-label {
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .result-intro {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+      letter-spacing: .05em;
+    }
+    .result-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--result-color, var(--cream));
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .result-profile-tag {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .result-jar {
+      width: 120px;
+      margin: 0 auto 28px;
+      display: block;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,.6));
+    }
+    .result-aura {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 36px;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .result-btn {
+      padding: 13px 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all .2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .result-btn-primary {
+      background: var(--result-color, var(--cream));
+      color: var(--bg);
+      border: none;
+    }
+    .result-btn-primary:hover { opacity: .85; }
+    .result-btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(240,232,208,.25);
+      color: var(--cream);
+    }
+    .result-btn-secondary:hover { border-color: var(--cream); }
+
+    @media (max-width: 600px) {
+      .quiz-section { padding: 80px 24px; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .result-card { padding: 40px 24px; }
+    }
+
     /* ── FIVE BLENDS ───────────────────────────────────────── */
     .blends-section {
       padding: 80px 48px;
@@ -710,6 +905,7 @@
     <a href="#" class="nav-logo">BALBOA</a>
     <ul class="nav-links">
       <li><a href="#blends">Blends</a></li>
+      <li><a href="#quiz">Find Your Blend</a></li>
       <li><a href="#story">Story</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="#b2b">B2B</a></li>
@@ -750,6 +946,42 @@
       <div class="tagline-col">
         <h3>Counterworthy</h3>
         <p>Designed to live on your counter, not hide in your cabinet. 100% plant-based, gluten-free, 0g sugar. No additives. No compromises.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="quiz-section" id="quiz">
+    <div class="quiz-inner">
+      <p class="quiz-label">Spotify Wrapped, but make it umami</p>
+      <h2 class="quiz-title">Which Blend <em>Are You?</em></h2>
+      <p class="quiz-subtitle">4 questions. One blend. A result worth sharing.</p>
+
+      <!-- Steps -->
+      <div class="quiz-steps" id="quizSteps">
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill" id="quizProgress"></div>
+        </div>
+        <p class="quiz-step-label" id="quizStepLabel">Question 1 of 4</p>
+        <h3 class="quiz-question" id="quizQuestion"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-result" id="quizResult">
+        <div class="result-card" id="resultCard">
+          <p class="result-label">Your Balboa Blend</p>
+          <p class="result-intro">You are</p>
+          <h2 class="result-name" id="resultName"></h2>
+          <p class="result-profile-tag" id="resultProfile"></p>
+          <svg class="result-jar" id="resultJar" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+          <p class="result-aura" id="resultAura"></p>
+          <div class="result-actions">
+            <button class="result-btn result-btn-primary" onclick="downloadCard()">Save & Share →</button>
+            <button class="result-btn result-btn-secondary" onclick="resetQuiz()">Retake Quiz</button>
+            <a class="result-btn result-btn-secondary" href="#blends">Shop Your Blend</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -979,6 +1211,197 @@
       slides[current].classList.add('active');
       dots[current].classList.add('active');
     }, 1500);
+
+    // ── Quiz ──────────────────────────────────────────────────
+    const blends = {
+      dill:    { name: 'Dill Ranch',        profile: 'Herb · Fresh · Nordic',         color: '#7aab72', glow: 'rgba(122,171,114,.25)', bg: '#111a10', aura: 'You keep it clean, intentional, and quietly Nordic. The kind of person whose kitchen always smells good without trying.',  tag: '01' },
+      oregano: { name: 'Oregano Flow',      profile: 'Mediterranean · Warm · Round',   color: '#c9a04c', glow: 'rgba(201,160,76,.2)',   bg: '#1a1610', aura: 'You host like it\'s effortless. Warm, generous, the last one at the table. Every dish you make feels considered.',        tag: '02' },
+      banh:    { name: 'Banh Mi',           profile: 'Vietnamese · Umami-deep · Bold', color: '#d4835a', glow: 'rgba(212,131,90,.2)',   bg: '#241208', aura: 'You cook with memory. Every dish carries a story — a place, a person, a moment. Complexity without explanation.',          tag: '03' },
+      seaweed: { name: 'Seaweed Drift',     profile: 'Oceanic · Salty · Savory',       color: '#5a9bad', glow: 'rgba(90,155,173,.2)',   bg: '#081420', aura: 'Still water, deep flavor. You don\'t need to be loud to be interesting. Your guests always leave curious.',             tag: '04' },
+      satay:   { name: 'Spicy Satay Chili', profile: 'Heat · Depth · Peanut',          color: '#c9504c', glow: 'rgba(201,80,76,.2)',    bg: '#200808', aura: 'You feel everything fully — including your food. Bold, direct, unapologetic. The table remembers your dishes.',          tag: '05' },
+    };
+
+    const questions = [
+      {
+        q: 'How do you cook on a normal weekday?',
+        options: [
+          { emoji: '🌿', text: 'Whatever\'s fresh — minimal, clean, seasonal',   blend: 'dill'    },
+          { emoji: '🍳', text: 'Something proper, low and slow, from scratch',    blend: 'oregano' },
+          { emoji: '🥢', text: 'Bold flavors, inspired by a place I\'ve been',   blend: 'banh'    },
+          { emoji: '🌊', text: 'Experimental — I follow the ingredient',          blend: 'seaweed' },
+          { emoji: '🌶️', text: 'Hot, layered, the more flavor the better',       blend: 'satay'   },
+        ]
+      },
+      {
+        q: 'Where do you feel most at home?',
+        options: [
+          { emoji: '🏔️', text: 'A quiet kitchen somewhere Nordic',              blend: 'dill'    },
+          { emoji: '☀️', text: 'A terrace in the Mediterranean',                blend: 'oregano' },
+          { emoji: '🛵', text: 'A street food market in Southeast Asia',         blend: 'banh'    },
+          { emoji: '🌊', text: 'By the sea — anywhere with salt in the air',     blend: 'seaweed' },
+          { emoji: '🔥', text: 'A loud kitchen with too many people in it',      blend: 'satay'   },
+        ]
+      },
+      {
+        q: 'What\'s your dinner party vibe?',
+        options: [
+          { emoji: '🕯️', text: 'Clean, minimal — everything has a reason',      blend: 'dill'    },
+          { emoji: '🍷', text: 'Warm, generous — everyone stays too long',       blend: 'oregano' },
+          { emoji: '🍜', text: 'Unexpected dishes — guests always ask for the recipe', blend: 'banh' },
+          { emoji: '🦪', text: 'Small, curated — interesting wine, good conversation', blend: 'seaweed' },
+          { emoji: '🌶️', text: 'Loud, spicy — at least one person cries from the heat', blend: 'satay' },
+        ]
+      },
+      {
+        q: 'What do you order first at a restaurant?',
+        options: [
+          { emoji: '🥗', text: 'Whatever\'s seasonal and simply prepared',       blend: 'dill'    },
+          { emoji: '🫙', text: 'Something classic, done perfectly',              blend: 'oregano' },
+          { emoji: '🍱', text: 'Something I\'ve never tried before',             blend: 'banh'    },
+          { emoji: '🦞', text: 'Oysters or anything from the sea',               blend: 'seaweed' },
+          { emoji: '🥵', text: 'The spiciest thing on the menu',                 blend: 'satay'   },
+        ]
+      }
+    ];
+
+    const jarPaths = {
+      dill:    { lid: '#7aab72', stroke: '#7aab72', body: '#111a10', label: 'DILL RANCH'        },
+      oregano: { lid: '#c9a04c', stroke: '#c9a04c', body: '#1a1610', label: 'OREGANO FLOW'      },
+      banh:    { lid: '#d4835a', stroke: '#d4835a', body: '#241208', label: 'BANH MI'            },
+      seaweed: { lid: '#5a9bad', stroke: '#5a9bad', body: '#081420', label: 'SEAWEED DRIFT'      },
+      satay:   { lid: '#c9504c', stroke: '#c9504c', body: '#200808', label: 'SPICY SATAY'        },
+    };
+
+    function jarSVG(key) {
+      const j = jarPaths[key];
+      return `
+        <rect x="30" y="2" width="40" height="10" rx="3" fill="${j.lid}" opacity=".9"/>
+        <rect x="22" y="10" width="56" height="8" rx="2" fill="${j.lid}"/>
+        <path d="M20 18 Q18 20 18 24 L18 108 Q18 118 28 120 L72 120 Q82 118 82 108 L82 24 Q82 20 80 18 Z" fill="${j.body}" stroke="${j.stroke}" stroke-width="1.5"/>
+        <rect x="24" y="38" width="52" height="36" rx="2" fill="#f0e8d0" opacity=".95"/>
+        <text x="50" y="57" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="#0e0d0a">balboa</text>
+        <text x="50" y="67" text-anchor="middle" font-family="sans-serif" font-size="4" fill="#555">${j.label}</text>
+        <rect x="24" y="74" width="52" height="10" rx="1" fill="${j.lid}" opacity=".35"/>`;
+    }
+
+    let current = 0;
+    const scores = { dill:0, oregano:0, banh:0, seaweed:0, satay:0 };
+
+    function renderQuestion() {
+      const q = questions[current];
+      document.getElementById('quizStepLabel').textContent = `Question ${current+1} of ${questions.length}`;
+      document.getElementById('quizProgress').style.width = `${(current / questions.length) * 100}%`;
+      document.getElementById('quizQuestion').textContent = q.q;
+      const opts = document.getElementById('quizOptions');
+      opts.innerHTML = '';
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.innerHTML = `<span class="quiz-option-emoji">${opt.emoji}</span>${opt.text}`;
+        btn.onclick = () => choose(opt.blend, btn);
+        opts.appendChild(btn);
+      });
+    }
+
+    function choose(blend, btn) {
+      document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      scores[blend]++;
+      setTimeout(() => {
+        current++;
+        if (current < questions.length) {
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      }, 350);
+    }
+
+    function showResult() {
+      const winner = Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+      const b = blends[winner];
+      document.getElementById('quizProgress').style.width = '100%';
+      document.getElementById('quizSteps').classList.add('hidden');
+      const result = document.getElementById('quizResult');
+      result.classList.add('visible');
+      document.getElementById('resultName').textContent    = b.name;
+      document.getElementById('resultName').style.color   = b.color;
+      document.getElementById('resultProfile').textContent = b.profile;
+      document.getElementById('resultAura').textContent    = b.aura;
+      document.getElementById('resultJar').innerHTML       = jarSVG(winner);
+      const card = document.getElementById('resultCard');
+      card.style.setProperty('--result-color', b.color);
+      card.style.setProperty('--result-glow', b.glow);
+      result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // store for download
+      result.dataset.blend = winner;
+    }
+
+    function resetQuiz() {
+      Object.keys(scores).forEach(k => scores[k] = 0);
+      current = 0;
+      document.getElementById('quizResult').classList.remove('visible');
+      document.getElementById('quizSteps').classList.remove('hidden');
+      document.getElementById('quizProgress').style.width = '0%';
+      renderQuestion();
+    }
+
+    function downloadCard() {
+      const blend = document.getElementById('quizResult').dataset.blend;
+      const b = blends[blend];
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080; canvas.height = 1920; // Instagram story format
+      const ctx = canvas.getContext('2d');
+      // background
+      ctx.fillStyle = '#0e0d0a';
+      ctx.fillRect(0, 0, 1080, 1920);
+      // color glow
+      const grad = ctx.createRadialGradient(540, 400, 0, 540, 400, 700);
+      grad.addColorStop(0, b.color + '55');
+      grad.addColorStop(1, 'transparent');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1080, 1920);
+      // BALBOA
+      ctx.fillStyle = '#f0e8d0';
+      ctx.font = 'bold 72px serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('BALBOA', 540, 220);
+      // label
+      ctx.fillStyle = '#a09880';
+      ctx.font = '32px sans-serif';
+      ctx.letterSpacing = '8px';
+      ctx.fillText('MY BLEND IS', 540, 760);
+      // blend name
+      ctx.fillStyle = b.color;
+      ctx.font = 'bold 110px serif';
+      ctx.fillText(b.name.toUpperCase(), 540, 900);
+      // profile
+      ctx.fillStyle = '#a09880';
+      ctx.font = '34px sans-serif';
+      ctx.fillText(b.profile, 540, 970);
+      // aura quote
+      ctx.fillStyle = '#f0e8d0';
+      ctx.font = 'italic 36px serif';
+      const words = b.aura.split(' ');
+      let line = ''; let y = 1100;
+      words.forEach(w => {
+        const test = line + w + ' ';
+        if (ctx.measureText(test).width > 900) { ctx.fillText(line, 540, y); line = w + ' '; y += 52; }
+        else line = test;
+      });
+      ctx.fillText(line, 540, y);
+      // tag
+      ctx.fillStyle = b.color + 'aa';
+      ctx.font = '28px sans-serif';
+      ctx.fillText('balboa.co — find your blend', 540, 1820);
+      // download
+      const a = document.createElement('a');
+      a.download = `balboa-${blend}.png`;
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+    }
+
+    renderQuestion();
 
     // Draggable carousel
     const track = document.getElementById('carouselTrack');
