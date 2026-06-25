@@ -111,9 +111,15 @@
     .hero-content {
       position: absolute;
       bottom: 6vh;
+      left: 48px;
       right: 48px;
-      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .hero-desc {
       text-align: right;
+      max-width: 320px;
     }
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
@@ -1011,8 +1017,10 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>BALBOA</h1>
-      <p>High-protein umami seasoning based on nutritional yeast.<br>Five chef-crafted blends.</p>
-      <a href="#blends" class="hero-cta">Discover the Blends</a>
+      <div class="hero-desc">
+        <p>High-protein umami seasoning based on nutritional yeast.<br>Five chef-crafted blends.</p>
+        <a href="#blends" class="hero-cta">Discover the Blends</a>
+      </div>
     </div>
     <div class="slide-dots">
       <div class="dot active"></div>
